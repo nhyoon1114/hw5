@@ -148,13 +148,13 @@ bool validDay(
     std::vector<int> workerDays)
 {
     // are all workers assigned that day viable?
-    for (Worker_T w = 0; w < daySched.size(); w++) {
-        if (availConstraint(daySched, avail, n, d, worker) == true &&
-            maxConstraint(maxShifts, worker, workerDays) == true) 
-        {
-            return true;
-        }
+  
+    if (availConstraint(daySched, avail, n, d, worker) == true &&
+      maxConstraint(maxShifts, worker, workerDays) == true) 
+    {
+      return true;
     }
+    
     return false;
 }
 
